@@ -1,0 +1,191 @@
+.sidebar {
+  width: 64px; // Initial width of the sidebar
+  height: 100vh; // Full height of the screen
+  background-color: $white; // Background color of the sidebar
+  position: fixed; // Keeps the sidebar fixed on the left
+  top: 0;
+  left: 0;
+  border-right: 1px solid $black-16;
+
+  transition: width 0.6s ease; // Smooth transition for width on hover
+
+  /* Theme Toggle Section */
+
+  #theme-switch {
+    margin-left: 8px;
+  }
+  .theme-toggle {
+    margin-top: 100px;
+    position: relative;
+    width: 100px; /* Adjust width to fit toggle and labels */
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Vertically align items */
+    visibility: visible; /* Keep the toggle always visible */
+    opacity: 1;
+    transition: opacity 0.3s ease; /* Transition for label visibility */
+  
+    .day-label,
+    .night-label {
+      font-size: 14px;
+      font-weight: 400;
+      opacity: 0; /* Initially hidden */
+      transition: opacity 0.3s ease;
+      position: absolute; /* Position the labels relative to the toggle */
+      top: 50%;
+      transform: translateY(-50%); /* Vertically center the labels */
+    }
+    .sun {
+      position: fixed;
+      transition: opacity 0.3s ease;
+      left: 12px;
+     opacity: 0;
+     z-index: 1000;
+    }
+  
+    .day-label {
+      left: 5px; /* Position the 'Day' label on the left */
+    }
+  
+    .night-label {
+      right: -20px; /* Position the 'Night' label on the right */
+    }
+  
+    /* Theme Toggle Switch (Checkbox) */
+    input[type="checkbox"] {
+      appearance: none;
+      width: 48px;
+      height: 24px;
+      background: $blue; /* Replace with your desired color */
+      border-radius: 50px;
+      box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      transition: 0.4s;
+      position: relative; /* Adjust the position of the toggle switch */
+      z-index: 2; /* Ensure toggle is above the labels */
+
+     
+
+    }
+    input[type="checkbox"]:checked ~ .sun {
+      opacity: 1;
+    }
+  
+    input[type="checkbox"]:checked {
+      background: $blue; /* Change to a color when checked */
+      
+    }
+  
+    input[type="checkbox"]::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: white;
+      border-radius: 50%;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+      top: 0;
+      left: 0;
+      margin: 2px;
+      transition: 0.4s;
+    }
+  
+    input[type="checkbox"]:checked::after {
+      left: 50%; /* Move the switch to the right when checked */
+    }
+  }
+
+  .icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img:first-child {
+      width: 40px;
+      height: 34px;
+    }
+
+    img:last-child {
+      width: 14px;
+      height: 14px;
+    }
+
+    img {
+      margin-right: 5px;
+      margin-top: 14px;
+    }
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  li:first-child {
+    margin-top: 15px;
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    color: #ecf0f1;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+
+    img {
+      width: 24px;
+      height: 24px;
+      margin-right: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    span {
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      color: black;
+    }
+
+    &:hover img {
+      transform: scale(1.2);
+    }
+
+    &:hover span {
+      opacity: 1;
+    }
+  }
+
+  hr {
+    border: 0;
+    border-top: 1px solid $black-16;
+    margin: 10px 0;
+  }
+
+  /* Hover Effect: Expand Sidebar and Show Labels */
+  &:hover {
+    width: 150px;
+    z-index: 1000;
+
+    .theme-toggle .day-label,
+    .theme-toggle .night-label {
+      opacity: 1; // Show labels when sidebar is hovered
+    }
+    #theme-switch {
+      margin-left: 33px;
+    }
+    .sun {
+      opacity: 0 !important;
+    }
+    .theme-toggle {
+      justify-content: space-evenly;
+    }
+
+    li {
+      span {
+        opacity: 1;
+      
+      }
+    }
+  }
+}
