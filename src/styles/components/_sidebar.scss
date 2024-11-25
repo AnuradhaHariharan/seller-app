@@ -189,3 +189,14 @@
     }
   }
 }
+.sidebar.dark {
+  background-color: #1F214A;
+  
+  span{
+    color: $white;
+  }
+  img {
+    filter: brightness(0) invert(1);
+  }
+  
+}

@@ -1,3 +1,11 @@
+.topbar.dark {
+    background-color:#1F214A;
+    color: $white;
+
+    span {
+        color: black;
+    }
+}
 .topbar {
     display: flex;
     align-items: center;
@@ -36,6 +44,7 @@
                 align-items: center;
                 width: 100%;
                 padding: 10px 10px;
+                border-radius: 24px;
 
                 .flag-image {
                     width: 22px;

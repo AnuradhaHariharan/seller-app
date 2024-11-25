@@ -3,6 +3,7 @@ import './App.scss';  // Main styles
 import './styles/main.scss';  // Additional styles
 import Sidebar from './Components/Sidebar';
 import Topbar from './Components/Topbar';
+import StatsContainer from './Components/StatsContainer';
 
 function App() {
   const [isDarkTheme, setIsDarkTheme] = useState(false);
@@ -27,8 +28,9 @@ function App() {
 
   return (
     <div className={`App ${isDarkTheme ? 'dark' : 'light'}`}>
-      <Sidebar toggleTheme={toggleTheme} />
-      <Topbar />
+      <Sidebar toggleTheme={toggleTheme}  theme={isDarkTheme}/>
+      <Topbar theme={isDarkTheme} />
+      <StatsContainer theme={isDarkTheme} />
     </div>
   );
 }

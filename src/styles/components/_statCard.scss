@@ -1,0 +1,50 @@
+.stat-card {
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    margin-left: 25px;
+    height: 157px;
+    width: 298px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  
+    .stat-card-heading {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: $black;
+      text-align: left;
+    }
+  
+    .stat-card-value {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: $black;
+      margin-bottom: 5px;
+      text-align: left;
+    }
+  
+    .stat-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: left;
+      margin-top: 10px;
+  
+      .stat-card-badge {
+        background-color: $light-green;
+        height: 24px;
+        width: 70px;
+        color: $black;
+        font-size: 0.8rem;
+        font-weight: bold;
+        padding: 5px 10px;
+        margin-right: 8px;
+      }
+  
+      .stat-card-description {
+        font-size: $font-size-body;
+        color: $black-60;
+      }
+    }
+  }
