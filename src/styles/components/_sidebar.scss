@@ -6,6 +6,7 @@
   top: 0;
   left: 0;
   border-right: 1px solid $black-16;
+  z-index: 101;
 
   transition: width 0.3s ease-in-out;
 
@@ -207,64 +208,7 @@
       }
     }
   }
-
-  /* Responsive Design */
-  @media (max-width: 1200px) {
-    width: 8vw;
-    &:hover {
-      width: 18vw;
-    }
-
-    .theme-toggle {
-      width: 80px;
-    }
-  }
-
-  @media (max-width: 768px) {
-    width: 12vw; // Adjust width for smaller screens
-    &:hover {
-      width: 20vw; // Increase hover width to make it more accessible on small screens
-    }
-
-    .theme-toggle {
-      width: 70px; // Adjust toggle size
-    }
-
-    li {
-      font-size: 12px; // Make text smaller on smaller screens
-    }
-
-    .icon-container {
-      img {
-        width: 32px; // Reduce icon size for smaller screens
-        height: 28px;
-      }
-    }
-  }
-
-  @media (max-width: 480px) {
-    width: 20vw; // Make sidebar wider on very small screens
-    &:hover {
-      width: 20%; // Increase hover width further for better interaction
-    }
-
-    .theme-toggle {
-      width: 60px; // Smaller toggle size
-      bottom: auto;
-    }
-
-    li {
-      font-size: 11px; // Further reduce font size for smaller screens
-    }
-
-    .icon-container {
-      img {
-        width: 30px; // Further reduce icon size
-        height: 26px;
-      }
-    }
-  }
-}
+  
 
 .sidebar.dark {
   background-color: #1F214A;
@@ -281,4 +225,5 @@
   .night-label {
     color: $white;
   }
+}
 }

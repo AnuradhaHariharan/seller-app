@@ -4,21 +4,9 @@
   padding: 20px;
   border-radius: 8px;
   border: 1px solid $black-16;
-  width: 60.6vw;
+  max-width: 60.6vw;
   min-height: 30.4vh;
-  height: 299px;
-
-  // Media query for smaller screens (e.g., mobile devices)
-  @media (max-width: 768px) {
-    width: 90vw;
-    height: auto;  // Adjust height for smaller screens
-  }
-
-  // Media query for very small screens (e.g., extra small mobile devices)
-  @media (max-width: 480px) {
-    width: 95vw;
-    padding: 15px;  // Adjust padding for smaller screens
-  }
+  height: 299px;  
 }
 
 .integration-list h3 {
@@ -29,10 +17,7 @@ table {
   width: 100%;
   border-collapse: collapse;
 
-  // Media query for smaller screens (adjust font size)
-  @media (max-width: 768px) {
-    font-size: 12px;
-  }
+ 
 }
 
 thead {
@@ -45,10 +30,7 @@ thead th {
   font-size: 14px;
   font-weight: 400;
 
-  // Adjust for smaller screens
-  @media (max-width: 768px) {
-    font-size: 12px;
-  }
+  
 }
 
 tbody tr {
@@ -62,11 +44,14 @@ tbody tr:last-child {
 tbody td {
   padding: 10px;
   font-size: 14px;
+  border-bottom: 1px solid rgba(0, 0, 0, .16);
+}
 
-  // Adjust for smaller screens
-  @media (max-width: 768px) {
-    font-size: 12px;
-    padding: 8px;
+tbody tr {
+  &:last-child {
+    td {
+      border-bottom: none;
+    }
   }
 }
 
@@ -93,15 +78,16 @@ tbody td .application img {
   width: 100px;
   vertical-align: middle;
 
-  // Adjust for smaller screens
-  @media (max-width: 768px) {
-    width: 80px;
-  }
+ 
 }
 
 .rate-bar-fill {
   background-color: #6a5ae0;
   height: 100%;
+}
+
+tbody {
+  height: 14vw;
 }
 
 tbody td span {
@@ -111,7 +97,6 @@ tbody td span {
 table {
   border-collapse: separate;
   border-spacing: 0;
-  border: 1px solid white;
   border-radius: 8px;
   overflow: hidden;
 }

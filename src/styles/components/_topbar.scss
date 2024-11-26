@@ -103,68 +103,7 @@
       }
     }
   
-    // Adjustments for small screens
-    @media (max-width: 768px) {
-      padding: 10px 15px; // Reduce padding for mobile devices
-      height: auto; // Allow height to adjust based on content
-      left: 0; // Fix the position for smaller screens
-      right: 0;
-  
-      h2 {
-        font-size: 24px; // Smaller font size for better readability on small screens
-      }
-  
-      .right-side {
-        flex-direction: column;
-        align-items: flex-start;
-        width: 100%;
-        margin-top: 10px;
-        
-        .country-dropdown {
-          width: 100%;
-          margin-right: 0;
-          margin-bottom: 15px;
-        }
-  
-        .divider {
-          width: 100%;
-          height: 1px;
-          margin-bottom: 15px;
-        }
-  
-        .login-image {
-          width: 25px;
-          height: 25px;
-        }
-      }
-    }
-  
-    // Adjustments for very small screens (e.g., mobile phones)
-    @media (max-width: 480px) {
-      padding: 10px 12px; // Slightly reduce padding for very small screens
-      height: auto;
-  
-      h2 {
-        font-size: 18px; // Further reduce font size for very small screens
-      }
-  
-      .right-side {
-        .country-dropdown {
-          width: 100%;
-          padding: 8px 10px;
-        }
-  
-        .divider {
-          margin-bottom: 10px;
-        }
-  
-        .login-image {
-          width: 22px;
-          height: 22px;
-        }
-      }
-    }
-  }
+}
   
   // Dark theme styles for topbar
   .topbar.dark {

@@ -129,7 +129,7 @@ const LineChart = () => {
       className="chart-container"
       style={{
         minWidth: "60.6vw", // Hardcoded width
-        minHeight: "30.4vh", // Hardcoded height
+        maxHeight: "30.4vh", // Hardcoded height
         padding: "20px",
         borderRadius: "0.5rem",
         boxShadow: "0 0.25rem 0.625rem rgba(0, 0, 0, 0.1)",

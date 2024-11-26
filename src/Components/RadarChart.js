@@ -102,7 +102,7 @@ const SalesByRegionChart = () => {
         className="sales-by-region-chart"
         style={{
           width: "28vw", // Width in rem
-          height: "25.36vh", // Reduced height to 230px
+          height: "25vh", // Reduced height to 230px
         }}
       >
         <Radar data={data} options={options} />

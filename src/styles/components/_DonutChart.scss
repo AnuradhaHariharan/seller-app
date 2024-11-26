@@ -1,34 +1,24 @@
 .donut-chart {
   width: 100%;
-  max-width: 444px; // Max width for larger screens
+  max-width: 444px;
   height: 299px;
   border: 1px solid rgba(0, 0, 0, 0.16);
   border-radius: 8px;
   padding: 20px;
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
   background-color: #fff;
-  margin: 0 auto; // Center the chart horizontally
+  margin: 0 auto; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
-  // Responsive for small screens (like mobile)
-  @media (max-width: 768px) {
-    height: 250px;
-    padding: 15px;
-  }
-
-  // Extra small screen adjustments (like very small mobile)
-  @media (max-width: 480px) {
-    height: 220px;
-    padding: 12px;
-  }
-
-  h3 {
-    margin: 0 0 16px;
-    font-size: 1.2rem; // Relative font size for responsiveness
-    font-weight: 600;
-
-    @media (max-width: 768px) {
-      font-size: 1rem;
-    }
+  .round-line {
+    display: block;
+    background: #696FFB;
+    width: 4px;
+    height: 25px;
+    border-radius: 8px;
+    margin: auto;
   }
 
   .chart-container {
@@ -78,18 +68,14 @@
       font-weight: 600;
       margin: 8px 0;
 
-      @media (max-width: 768px) {
-        font-size: 1.5rem;
-      }
+     
     }
 
     p {
       font-size: 1rem;
       color: #888;
 
-      @media (max-width: 768px) {
-        font-size: 0.9rem;
-      }
+     
     }
   }
 
@@ -100,12 +86,7 @@
     font-size: 14px;
     color: #555;
 
-    @media (max-width: 768px) {
-      flex-direction: column;
-      align-items: center;
-      font-size: 12px;
-    }
-
+    
     div {
       text-align: center;
 

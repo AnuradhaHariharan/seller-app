@@ -45,6 +45,9 @@
       background-color: #2CC483;
     }
   }
+  tbody td {
+    border-bottom: 1px solid rgba(255,255,255,.16);
+  }
 
   .chart-container {
     background-color: #1F214A;
@@ -93,72 +96,10 @@
   padding: 20px;
   border-radius: 8px;
   width: 29.4vw;
-  min-height: 30.4vh;
+  max-height: 30.4vh;
   height: 19.77vw;
 
   h3 {
     color: black;
-  }
-
-  // Make it responsive
-  @media (max-width: 1024px) {
-    width: 45vw;
-    min-height: 25vh;
-    height: 22vw;
-  }
-
-  @media (max-width: 768px) {
-    width: 80vw;
-    min-height: 30vh;
-    height: 25vw;
-  }
-
-  @media (max-width: 480px) {
-    width: 90vw;
-    min-height: 35vh;
-    height: 30vw;
-  }
-}
-
-// Responsive layout for the stats container
-@media (max-width: 1200px) {
-  .stats-container {
-    flex-direction: column; // Stack the elements for smaller screens
-    margin-left: 32px;
-    padding: 4vh 3vw;
-  }
-}
-
-@media (max-width: 768px) {
-  .stats-container {
-    flex-direction: column; // Stack the elements for smaller screens
-    margin-left: 20px;
-    padding: 3vh 4vw;
-  }
-  .stat-card {
-    width: 100%;
-    margin-bottom: 20px; // Add space between cards
-  }
-
-  .sales-by-region-container {
-    width: 100%; // Full width on small screens
-    margin-bottom: 20px; // Add space between components
-  }
-}
-
-@media (max-width: 480px) {
-  .stats-container {
-    flex-direction: column; // Stack the elements for very small screens
-    margin-left: 10px;
-    padding: 2vh 3vw;
-  }
-  .stat-card {
-    width: 100%; // Full width on mobile devices
-    margin-bottom: 20px;
-  }
-
-  .sales-by-region-container {
-    width: 100%; // Full width on mobile devices
-    margin-bottom: 20px;
   }
 }

@@ -121,13 +121,19 @@ const HalfDonutChart = () => {
           color: "#555",
         }}
       >
-        <div style={{ textAlign: "center" }}>
-          <p style={{ margin: 0, fontWeight: "600", color: "#4A90E2" }}>2,804</p>
-          <p style={{ margin: 0 }}>Premium Users</p>
+        <div style={{ textAlign: "center", display: "flex", gap: "8px" }}>
+          <span className="round-line"></span>
+          <div>
+            <p style={{ margin: 0, fontWeight: "600", color: "#4A90E2", textAlign: "left" }}>2,804</p>
+            <p style={{ margin: 0 }}>Premium Users</p>
+          </div>
         </div>
-        <div style={{ textAlign: "center" }}>
-          <p style={{ margin: 0, fontWeight: "600", color: "#C2D6FF" }}>397</p>
-          <p style={{ margin: 0 }}>Basic Users</p>
+        <div style={{ textAlign: "center", display: "flex", gap: "8px"  }}>
+          <div>
+            <p style={{ margin: 0, fontWeight: "600", color: "#C2D6FF", textAlign: "left"  }}>397</p>
+            <p style={{ margin: 0 }}>Basic Users</p>
+          </div>
+          <span className="round-line"></span>
         </div>
       </div>
     </div>

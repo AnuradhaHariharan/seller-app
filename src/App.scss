@@ -1,14 +1,73 @@
 * {
-    font-family: 'Roboto', sans-serif;
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-  }
-
-.App {
-  display: flex;
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
-.content-panel {
-  width: calc(100 - 4.45)vw;
+// RESPONSIVE DESIGN
+// Extra Small
+@media (min-width: 320px) {
+}
+
+@media (max-width: 765px) {
+  .sidebar {
+    display: none;
+  }
+  
+  .stats-container{
+    margin-left: 0 !important;
+  }
+
+  .flex-row {
+    flex-wrap: wrap !important;
+  }
+  .stat-card {
+    min-width: 38vw ;
+  }
+  .donut-chart {
+    margin: 0 !important;
+  }
+  .integration-list {
+    max-width: max-content !important;
+  }
+  .chart-container {
+    min-width: 80vw;
+  }
+  .sales-by-region-container {
+    min-width: 45vw;
+    .sales-by-region-chart {
+      height: 100% !important;
+      width: 100% !important;
+    }
+  }
+}
+
+// Medium (Tablet Portrait)
+@media (min-width: 768px) {
+  .flex-row {
+    justify-content: center;
+  }
+}
+
+// Large (Tablet Landscape)
+@media (min-width: 1024px) {
+}
+
+// Extra Large (Laptop/Desktop)
+@media (min-width: 1280px) {
+  
+}
+
+// Ultra Large (Large Desktop/TV)
+@media (min-width: 1440px) {
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+  }
+  .integration-list {
+    width: 60.6vw;
+    min-height: 30.4vh;
+    height: 299px;
+  }
 }
