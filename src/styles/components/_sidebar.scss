@@ -1,13 +1,13 @@
 .sidebar {
-  width: 4.45vw; // Initial width of the sidebar
-  height: 100vh; // Full height of the screen
-  background-color: $white; // Background color of the sidebar
-  position: fixed; // Keeps the sidebar fixed on the left
+  width: 4.45vw;
+  height: 100vh;
+  background-color: $white;
+  position: fixed;
   top: 0;
   left: 0;
   border-right: 1px solid $black-16;
 
-  transition: width 0.3s ease-in-out; // Smooth transition for width on hover
+  transition: width 0.3s ease-in-out;
 
   /* Theme Toggle Section */
   #theme-switch {
@@ -17,11 +17,11 @@
   .theme-toggle {
     position: fixed;
     bottom: 1rem;
-    width: 100px; /* Adjust width to fit toggle and labels */
+    width: 100px;
     height: 50px;
     display: flex;
     justify-content: space-between;
-    align-items: center; /* Vertically align items */
+    align-items: center;
     visibility: visible;
     opacity: 1;
     transition: opacity 0.2s ease;
@@ -32,9 +32,9 @@
       font-weight: 400;
       opacity: 0; /* Initially hidden */
       transition: opacity 0.3s ease;
-      position: absolute; /* Position the labels relative to the toggle */
+      position: absolute;
       top: 50%;
-      transform: translateY(-50%); /* Vertically center the labels */
+      transform: translateY(-50%);
     }
 
     .sun {
@@ -178,13 +178,13 @@
     .icon-container-2 {
       display: flex; /* Show icon-container-2 on hover */
       align-items: center;
-      justify-content: space-between; /* Ensures images are side by side */
-      margin-top: 20px;
-      margin-left: 20px;
+      justify-content: space-between;
+      margin-top: 16px;
+      margin-left: 18px;
       
-      /* Ensure images in icon-container-2 are side by side */
+    
       img {
-        margin-right: 10px; /* Space between the images */
+        margin-right: 10px;
       }
     }
 
@@ -210,13 +210,13 @@
 
   /* Responsive Design */
   @media (max-width: 1200px) {
-    width: 8vw; // Slightly increase width for medium screens
+    width: 8vw;
     &:hover {
-      width: 18vw; // Keep hover behavior similar on medium screens
+      width: 18vw;
     }
 
     .theme-toggle {
-      width: 80px; // Adjust theme toggle size for medium screens
+      width: 80px;
     }
   }
 

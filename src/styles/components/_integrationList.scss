@@ -84,7 +84,7 @@ tbody td .application img {
 }
 
 .rate-bar {
-  background-color: #3b4067;
+  background-color: #696FFB33;
   height: 6px;
   border-radius: 3px;
   overflow: hidden;
@@ -108,6 +108,29 @@ tbody td span {
   vertical-align: middle;
 }
 
-tbody td:last-child {
-  text-align: right;
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid white;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+tr {
+  padding: 10px;
+  text-align: left;
+  border-radius: 8px;
+
+  th:first-child {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;  
+  }
+  th:last-child {
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    text-align: left;
+  }
+  thead {
+    border-radius: 8px;
+  }
 }

@@ -8,7 +8,7 @@
     "profit": {
       "value": "$8,583.09",
       "currency": "$",
-      "badge": "1.46%"
+      "badge": "1.46"
     },
     "totalViews": {
       "value": "52,234",
@@ -16,9 +16,9 @@
       "badge": "8.75"
     },
     "conversionRate": {
-      "value": "6.12%",
+      "value": "6.12",
       "currency": "",
-      "badge": "1.95%"
+      "badge": "1.95"
     }
   },
   "IN": {
@@ -30,7 +30,7 @@
     "profit": {
       "value": "₹5,600.00",
       "currency": "₹",
-      "badge": "2.10%"
+      "badge": "2.10"
     },
     "totalViews": {
       "value": "45,000",
@@ -38,9 +38,9 @@
       "badge": "5.10"
     },
     "conversionRate": {
-      "value": "5.00%",
+      "value": "5.00",
       "currency": "",
-      "badge": "0.80%"
+      "badge": "0.80"
     }
   },
   "CA": {
@@ -52,7 +52,7 @@
     "profit": {
       "value": "$7,100.00",
       "currency": "$",
-      "badge": "3.10%"
+      "badge": "3.10"
     },
     "totalViews": {
       "value": "60,000",
@@ -60,9 +60,9 @@
       "badge": "4.50"
     },
     "conversionRate": {
-      "value": "7.10%",
+      "value": "7.10",
       "currency": "",
-      "badge": "2.50%"
+      "badge": "2.50"
     }
   },
   "DE": {
@@ -74,7 +74,7 @@
     "profit": {
       "value": "€7,800.00",
       "currency": "€",
-      "badge": "1.90%"
+      "badge": "1.90"
     },
     "totalViews": {
       "value": "55,000",
@@ -82,9 +82,9 @@
       "badge": "6.00"
     },
     "conversionRate": {
-      "value": "5.50%",
+      "value": "5.50",
       "currency": "",
-      "badge": "1.20%"
+      "badge": "1.20"
     }
   }
 }

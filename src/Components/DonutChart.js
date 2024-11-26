@@ -82,14 +82,15 @@ const HalfDonutChart = () => {
             left: "50%",
             transform: "translate(-50%, -50%)",
             textAlign: "center",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center"
           }}
         >
           <div
             style={{
-              width: "40px",
-              height: "40px",
               margin: "0 auto",
-              backgroundColor: "#E5F1FF",
               borderRadius: "50%",
               display: "flex",
               alignItems: "center",
@@ -100,9 +101,8 @@ const HalfDonutChart = () => {
           </div>
           <h1
             style={{
-              fontSize: "32px",
-              fontWeight: "600",
-              margin: "8px 0",
+              fontSize: "34px",
+              fontWeight: "700",
             }}
           >
             3,201

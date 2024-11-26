@@ -55,7 +55,7 @@ const IntegrationList = () => {
     <div className="integration-list">
       <h3>List of Integration</h3>
       <table>
-        <thead>
+        <thead style={{backgroundColor: "rgba(105, 111, 251, 0.2)"}}>
           <tr>
             <th>
               <input type="checkbox" />
