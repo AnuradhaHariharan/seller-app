@@ -29,8 +29,11 @@ function App() {
   return (
     <div className={`App ${isDarkTheme ? 'dark' : 'light'}`}>
       <Sidebar toggleTheme={toggleTheme}  theme={isDarkTheme}/>
-      <Topbar theme={isDarkTheme} />
-      <StatsContainer theme={isDarkTheme} />
+      
+      <div class="content-panel">
+        <Topbar theme={isDarkTheme} />
+        <StatsContainer theme={isDarkTheme} />
+      </div>
     </div>
   );
 }
