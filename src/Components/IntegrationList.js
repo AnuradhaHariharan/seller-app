@@ -1,5 +1,4 @@
-import React from "react";
-
+import React, { useState, useEffect } from "react";
 
 const IntegrationList = () => {
   const integrations = [
@@ -9,7 +8,7 @@ const IntegrationList = () => {
       name: "Stripe",
       type: "Finance",
       rate: 33,
-      profit: "$10,998.28",
+      profit: 10998.28,
     },
     {
       id: 2,
@@ -17,7 +16,7 @@ const IntegrationList = () => {
       name: "Zapier",
       type: "CRM",
       rate: 27,
-      profit: "$8,998.59",
+      profit: 8998.59,
     },
     {
       id: 3,
@@ -25,9 +24,32 @@ const IntegrationList = () => {
       name: "Shopify",
       type: "Marketplace",
       rate: 40,
-      profit: "$13,331.24",
+      profit: 13331.24,
     },
   ];
+
+  // State to store the currency symbol
+  const [currencySymbol, setCurrencySymbol] = useState("$");
+
+  useEffect(() => {
+    // Get the country code from localStorage
+    const countryCode = localStorage.getItem("selectedCountry");
+
+    // Set currency symbol based on country code
+    const currencyMap = {
+      US: "$",        // USD for US
+      CA: "$",        // CAD for Canada (same symbol as USD, but different currency)
+      DE: "€",        // EUR for Germany
+      IN: "₹",        // INR for India
+    };
+
+    // Set the currency symbol based on country code or default to "$"
+    if (countryCode && currencyMap[countryCode]) {
+      setCurrencySymbol(currencyMap[countryCode]);
+    } else {
+      setCurrencySymbol("$"); // Default to USD
+    }
+  }, []); // Only run once on component mount
 
   return (
     <div className="integration-list">
@@ -66,7 +88,10 @@ const IntegrationList = () => {
                 </div>
                 <span>{integration.rate}%</span>
               </td>
-              <td>{integration.profit}</td>
+              <td>
+                {/* Format profit with the correct currency */}
+                {currencySymbol}{integration.profit.toFixed(2)}
+              </td>
             </tr>
           ))}
         </tbody>
@@ -76,3 +101,4 @@ const IntegrationList = () => {
 };
 
 export default IntegrationList;
+

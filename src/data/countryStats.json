@@ -1,0 +1,90 @@
+{
+  "US": {
+    "totalIncome": {
+      "value": "$33,328.12",
+      "currency": "$",
+      "badge": "2.63"
+    },
+    "profit": {
+      "value": "$8,583.09",
+      "currency": "$",
+      "badge": "1.46%"
+    },
+    "totalViews": {
+      "value": "52,234",
+      "currency": "",
+      "badge": "8.75"
+    },
+    "conversionRate": {
+      "value": "6.12%",
+      "currency": "",
+      "badge": "1.95%"
+    }
+  },
+  "IN": {
+    "totalIncome": {
+      "value": "₹25,500.50",
+      "currency": "₹",
+      "badge": "3.20"
+    },
+    "profit": {
+      "value": "₹5,600.00",
+      "currency": "₹",
+      "badge": "2.10%"
+    },
+    "totalViews": {
+      "value": "45,000",
+      "currency": "",
+      "badge": "5.10"
+    },
+    "conversionRate": {
+      "value": "5.00%",
+      "currency": "",
+      "badge": "0.80%"
+    }
+  },
+  "CA": {
+    "totalIncome": {
+      "value": "$28,000.00",
+      "currency": "$",
+      "badge": "4.20"
+    },
+    "profit": {
+      "value": "$7,100.00",
+      "currency": "$",
+      "badge": "3.10%"
+    },
+    "totalViews": {
+      "value": "60,000",
+      "currency": "",
+      "badge": "4.50"
+    },
+    "conversionRate": {
+      "value": "7.10%",
+      "currency": "",
+      "badge": "2.50%"
+    }
+  },
+  "DE": {
+    "totalIncome": {
+      "value": "€30,500.00",
+      "currency": "€",
+      "badge": "2.50"
+    },
+    "profit": {
+      "value": "€7,800.00",
+      "currency": "€",
+      "badge": "1.90%"
+    },
+    "totalViews": {
+      "value": "55,000",
+      "currency": "",
+      "badge": "6.00"
+    },
+    "conversionRate": {
+      "value": "5.50%",
+      "currency": "",
+      "badge": "1.20%"
+    }
+  }
+}

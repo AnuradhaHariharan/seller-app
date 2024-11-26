@@ -1,81 +1,129 @@
 .donut-chart {
-    position: relative;
-    width: 28rem;
-    height: 19rem;
-    border-radius: 100px 100px 0 0;
-    overflow: hidden;
-    background-color: #f4f4f4;
-  
-    &__segment {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      border-radius: 100px 100px 0 0;
-      transform: rotate(-90deg);
-    }
-  
-    &__center {
-      position: absolute;
-      top: 25%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-  
-      .user-icon {
-        width: 40px;
-        height: 40px;
-        margin-bottom: 5px;
-      }
-  
-      .count {
-        font-size: 1.8rem;
-        font-weight: bold;
-        color: #333;
-      }
-  
-      .text {
-        font-size: 1rem;
-        color: #777;
-      }
+  width: 100%;
+  max-width: 444px; // Max width for larger screens
+  height: 299px;
+  border: 1px solid rgba(0, 0, 0, 0.16);
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  margin: 0 auto; // Center the chart horizontally
+
+  // Responsive for small screens (like mobile)
+  @media (max-width: 768px) {
+    height: 250px;
+    padding: 15px;
+  }
+
+  // Extra small screen adjustments (like very small mobile)
+  @media (max-width: 480px) {
+    height: 220px;
+    padding: 12px;
+  }
+
+  h3 {
+    margin: 0 0 16px;
+    font-size: 1.2rem; // Relative font size for responsiveness
+    font-weight: 600;
+
+    @media (max-width: 768px) {
+      font-size: 1rem;
     }
   }
-  
-  .user-legend {
-    margin-top: 20px;
+
+  .chart-container {
+    position: relative;
     width: 100%;
-  
-    &__item {
+    height: 100%;
+  }
+
+  .shadow {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 120%;
+    height: 70px;
+    background-color: rgba(0, 0, 0, 0.05); // Light grey shadow
+    border-radius: 50%;
+    z-index: -1; // Push behind the chart
+    filter: blur(10px);
+  }
+
+  .center-content {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+
+    .icon-container {
+      width: 40px;
+      height: 40px;
+      margin: 0 auto;
+      background-color: #e5f1ff;
+      border-radius: 50%;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      margin-bottom: 10px;
-  
-      .legend-color {
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        margin-right: 10px;
+      justify-content: center;
+
+      img {
+        width: 50%;
+        height: 50%;
       }
-  
-      .premium {
-        background-color: #6c63ff;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 600;
+      margin: 8px 0;
+
+      @media (max-width: 768px) {
+        font-size: 1.5rem;
       }
-  
-      .basic {
-        background-color: #f4f4f4;
-      }
-  
-      .legend-text {
-        flex-grow: 1;
+    }
+
+    p {
+      font-size: 1rem;
+      color: #888;
+
+      @media (max-width: 768px) {
         font-size: 0.9rem;
-        color: #555;
-      }
-  
-      .legend-count {
-        font-size: 0.9rem;
-        font-weight: bold;
-        color: #333;
       }
     }
   }
-  
+
+  .footer-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+    font-size: 14px;
+    color: #555;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: center;
+      font-size: 12px;
+    }
+
+    div {
+      text-align: center;
+
+      p {
+        margin: 0;
+      }
+
+      p:first-child {
+        font-weight: 600;
+      }
+
+      .premium {
+        color: #4a90e2;
+      }
+
+      .basic {
+        color: #c2d6ff;
+      }
+    }
+  }
+}

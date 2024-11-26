@@ -8,6 +8,10 @@ const Sidebar = ({ toggleTheme, theme }) => {
         <img src="/assets/sellerApp-icon-logo.svg" alt="Dashboard icon" />
         <img src="/assets/octicon_arrow-up-16.svg" alt="Arrow icon" />
       </span>
+      <span className="icon-container-2">
+        <img src="/assets/sellerApp.svg" alt="Dashboard icon" />
+        <img src="/assets/arrow-up.png" alt="Arrow icon" />
+      </span>
       <ul>
         <li>
           <img src="/assets/dashboard-icon.svg" alt="Dashboard icon" />
@@ -18,7 +22,7 @@ const Sidebar = ({ toggleTheme, theme }) => {
           <span>Payment</span>
         </li>
         <li>
-          <img src="/assets/customers-icon.svg" alt="Customers icon" />
+          <img src="/assets/majesticons_users-line.svg" alt="Customers icon" />
           <span>Customers</span>
         </li>
         <li>

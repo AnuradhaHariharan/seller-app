@@ -1,149 +1,138 @@
 import React from "react";
+import { Doughnut } from "react-chartjs-2";
+import {
+  Chart as ChartJS,
+  ArcElement,
+  Tooltip,
+  Legend,
+} from "chart.js";
 
-const DonutChart = () => {
-  const premiumUsers = 2804;
-  const basicUsers = 397;
-  const totalUsers = premiumUsers + basicUsers;
+// Register Chart.js components
+ChartJS.register(ArcElement, Tooltip, Legend);
 
-  const premiumPercentage = (premiumUsers / totalUsers) * 100;
-  const basicPercentage = (basicUsers / totalUsers) * 100;
+const HalfDonutChart = () => {
+  const data = {
+    labels: ["Premium Users", "Basic Users"],
+    datasets: [
+      {
+        data: [2804, 397], // Example data
+        backgroundColor: ["#696FFB", "#696FFB99"], // Colors for the segments
+        borderWidth: 2, // No border
+        borderColor: "#ffffff",
+      },
+    ],
+  };
+
+  const options = {
+    rotation: -90, // Start angle (half-donut)
+    circumference: 180, // End angle (half-donut)
+    cutout: "70%", // Inner radius for the donut hole
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: {
+        display: false, // Hide the legend
+      },
+      tooltip: {
+        enabled: true, // Enable tooltips
+      },
+    },
+  };
 
   return (
     <div
-      className="donut-chart-container"
-      style={{
-        width: "29.4vw", // Fixed width
-        minHeight: "30.4vh", // Fixed height
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        margin: "0 auto",
-        border: "1px solid #ddd",
-        borderRadius: "10px",
-        padding: "1rem",
-        boxSizing: "border-box",
-      }}
+    className="donut-chart"
     >
+      {/* Heading */}
+      <h3 style={{ margin: "0 0 16px", fontSize: "18px", fontWeight: "600" }}>
+        Registered Users
+      </h3>
+
+      {/* Chart Container */}
       <div
-        className="donut-chart"
         style={{
           position: "relative",
-          width: "60%", // Adjust size relative to container
-          height: "60%", // Maintain aspect ratio
-          width: "200px",
-          maxHeight: "200px",
+          width: "100%",
+          height: "150px",
         }}
       >
+        {/* Add a shadow using a wrapper */}
         <div
-          className="donut-chart__segment"
-          style={{
-            width: "100%",
-            height: "100%",
-            borderRadius: "50%",
-            background: `conic-gradient(
-              #6c63ff ${premiumPercentage}%, 
-              #f4f4f4 ${premiumPercentage}% 100%
-            )`,
-          }}
-        ></div>
-        <div
-          className="donut-chart__center"
           style={{
             position: "absolute",
-            top: "50%",
+            top: "30%",
+            left: "50%",
+            transform: "translate(-50%, 0)",
+            width: "120%",
+            height: "70px",
+            backgroundColor: "rgba(0, 0, 0, 0.05)", // Light grey shadow
+            borderRadius: "50%",
+            zIndex: -1, // Push behind the chart
+            filter: "blur(10px)", // Smooth shadow effect
+          }}
+        ></div>
+
+        <Doughnut data={data} options={options} />
+
+        {/* Center Content (Icon and Number) */}
+        <div
+          style={{
+            position: "absolute",
+            top: "80%",
             left: "50%",
             transform: "translate(-50%, -50%)",
             textAlign: "center",
-            width: "50%",
-            height: "50%",
-            borderRadius: "50%",
-            backgroundColor: "#fff",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
-            boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
           }}
         >
-          <img
-            src="../../public/assets/customers-icon.svg"
-            alt="User Icon"
-            className="user-icon"
+          <div
             style={{
-              width: "30px",
-              height: "30px",
-              marginBottom: "0.5rem",
+              width: "40px",
+              height: "40px",
+              margin: "0 auto",
+              backgroundColor: "#E5F1FF",
+              borderRadius: "50%",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
             }}
-          />
-          <div className="count" style={{ fontSize: "1rem", fontWeight: "700" }}>
-            {totalUsers}
+          >
+            <img src="/assets/customers-icon.svg" alt="Icon" />
           </div>
-          <div className="text" style={{ fontSize: "0.875rem", color: "#666" }}>
-            Total Users
-          </div>
+          <h1
+            style={{
+              fontSize: "32px",
+              fontWeight: "600",
+              margin: "8px 0",
+            }}
+          >
+            3,201
+          </h1>
+          <p style={{ fontSize: "14px", color: "#888" }}>Total users</p>
         </div>
       </div>
+
+      {/* Footer Labels */}
       <div
-        className="user-legend"
         style={{
           display: "flex",
           justifyContent: "space-between",
-          width: "100%",
-          marginTop: "1rem",
+          marginTop: "16px",
+          fontSize: "14px",
+          color: "#555",
         }}
       >
-        <div
-          className="user-legend__item"
-          style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}
-        >
-          <span
-            className="legend-color premium"
-            style={{
-              display: "inline-block",
-              width: "16px",
-              height: "16px",
-              borderRadius: "50%",
-              backgroundColor: "#6c63ff",
-            }}
-          ></span>
-          <span className="legend-text" style={{ fontSize: "0.875rem" }}>
-            Premium Users
-          </span>
-          <span
-            className="legend-count"
-            style={{ fontWeight: "700", marginLeft: "0.5rem" }}
-          >
-            {premiumUsers}
-          </span>
+        <div style={{ textAlign: "center" }}>
+          <p style={{ margin: 0, fontWeight: "600", color: "#4A90E2" }}>2,804</p>
+          <p style={{ margin: 0 }}>Premium Users</p>
         </div>
-        <div
-          className="user-legend__item"
-          style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}
-        >
-          <span
-            className="legend-color basic"
-            style={{
-              display: "inline-block",
-              width: "16px",
-              height: "16px",
-              borderRadius: "50%",
-              backgroundColor: "#f4f4f4",
-            }}
-          ></span>
-          <span className="legend-text" style={{ fontSize: "0.875rem" }}>
-            Basic Users
-          </span>
-          <span
-            className="legend-count"
-            style={{ fontWeight: "700", marginLeft: "0.5rem" }}
-          >
-            {basicUsers}
-          </span>
+        <div style={{ textAlign: "center" }}>
+          <p style={{ margin: 0, fontWeight: "600", color: "#C2D6FF" }}>397</p>
+          <p style={{ margin: 0 }}>Basic Users</p>
         </div>
       </div>
     </div>
   );
 };
 
-export default DonutChart;
+export default HalfDonutChart;
+

@@ -5,7 +5,7 @@ const StatCard = ({ heading, value, currency, description, badge }) => {
     <div className="stat-card">
       <h3 className="stat-card-heading">{heading}</h3>
       <p className="stat-card-value">
-        {currency && <span className="currency-symbol">$</span>} {/* Currency Span */}
+        {currency && <span className="currency-symbol"></span>} {/* Currency Span */}
         {value !== null ? value : "N/A"}
       </p>
       <div className="stat-card-footer">

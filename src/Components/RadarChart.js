@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Radar } from "react-chartjs-2";
 import {
   Chart as ChartJS,
@@ -14,6 +14,22 @@ import {
 ChartJS.register(RadialLinearScale, PointElement, LineElement, Filler, Tooltip, Legend);
 
 const SalesByRegionChart = () => {
+  const [currencySymbol, setCurrencySymbol] = useState("$");
+
+  // Define currency symbols based on country
+  const currencyMap = {
+    US: "$", // USD for US
+    CA: "$", // CAD for Canada (same symbol as USD, but different currency)
+    IN: "₹", // INR for India
+    DE: "€", // EUR for Germany
+  };
+
+  useEffect(() => {
+    // Retrieve country code from localStorage
+    const countryCode = localStorage.getItem("selectedCountry") || "US"; // Default to US if no country is selected
+    setCurrencySymbol(currencyMap[countryCode] || "$"); // Set currency symbol based on country
+  }, []);
+
   const data = {
     labels: ["Asia", "Europe", "Americas", "Africa", "Middle East", "Pacific"],
     datasets: [
@@ -41,7 +57,7 @@ const SalesByRegionChart = () => {
       tooltip: {
         callbacks: {
           label: function (context) {
-            return `${context.label}: ${context.raw.toLocaleString("en-US")}`;
+            return `${context.label}: ${currencySymbol}${context.raw.toLocaleString("en-US")}`;
           },
         },
       },
@@ -64,7 +80,7 @@ const SalesByRegionChart = () => {
             size: 12,
           },
           callback: function (value) {
-            return `$${value}`;
+            return `${currencySymbol}${value}`;
           },
         },
         pointLabels: {
@@ -86,8 +102,7 @@ const SalesByRegionChart = () => {
         className="sales-by-region-chart"
         style={{
           width: "28vw", // Width in rem
-          height: "28.36vh", // Reduced height to 230px
-         
+          height: "25.36vh", // Reduced height to 230px
         }}
       >
         <Radar data={data} options={options} />

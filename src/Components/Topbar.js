@@ -1,40 +1,28 @@
 import React, { useState, useEffect } from 'react';
 
 const countries = [
-    { code: 'US', name: 'USA', flag: '/assets/usa.png' },
-    { code: 'IN', name: 'India', flag: '/assets/india.png' },
-    { code: 'CA', name: 'Canada', flag: '/assets/canada.png' },
-    { code: 'DE', name: 'Germany', flag: '/assets/germany.png' }
+    { code: 'US', name: 'USA', flag: '/assets/usa.png', currency: 'USD' },
+    { code: 'IN', name: 'India', flag: '/assets/india.png', currency: 'INR' },
+    { code: 'CA', name: 'Canada', flag: '/assets/canada.png', currency: 'CAD' },
+    { code: 'DE', name: 'Germany', flag: '/assets/germany.png', currency: 'EUR' }
 ];
 
 const Topbar = ({ theme, toggleTheme }) => {
-    // Try to get the selected country from localStorage, or use the default first country
-    const storedCountry = localStorage.getItem('selectedCountry');
+    // Try to get the selected country code from localStorage, or use the default first country code
+    const storedCountryCode = localStorage.getItem('selectedCountry');
     
-    // Check if storedCountry is valid JSON or not
-    let initialCountry = countries[0]; // default value
-    if (storedCountry) {
-        try {
-            const parsedCountry = JSON.parse(storedCountry);
-            // Check if the parsed object matches the shape of the country object
-            if (parsedCountry && parsedCountry.code && parsedCountry.name && parsedCountry.flag) {
-                initialCountry = parsedCountry;
-            }
-        } catch (error) {
-            console.error('Error parsing country data from localStorage:', error);
-        }
-    }
+    // Default to the first country if no country is stored in localStorage
+    const initialCountry = countries.find(c => c.code === storedCountryCode) || countries[0];
 
     const [selectedCountry, setSelectedCountry] = useState(initialCountry);
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-    // Effect to store the selected country in localStorage
+    // Effect to store the selected country code in localStorage
     useEffect(() => {
         try {
-            const countryToStore = JSON.stringify(selectedCountry);
-            localStorage.setItem('selectedCountry', countryToStore);
+            localStorage.setItem('selectedCountry', selectedCountry.code); // Save only the country code
         } catch (error) {
-            console.error("Error saving country to localStorage", error);
+            console.error("Error saving country code to localStorage", error);
         }
     }, [selectedCountry]);
 
@@ -54,10 +42,7 @@ const Topbar = ({ theme, toggleTheme }) => {
             <h2>Dashboard</h2>
             <div className="right-side">
                 {/* Country Dropdown */}
-                <div 
-                    className="country-dropdown"
-                    onClick={toggleDropdown}
-                >
+                <div className="country-dropdown" onClick={toggleDropdown}>
                     <div className="selected-country">
                         <img
                             src={selectedCountry.flag}
@@ -101,3 +86,4 @@ const Topbar = ({ theme, toggleTheme }) => {
 };
 
 export default Topbar;
+

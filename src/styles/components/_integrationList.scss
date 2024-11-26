@@ -1,79 +1,113 @@
 .integration-list {
-    background-color: $white;
-    color: $black;
-    padding: 20px;
-    border-radius: 8px;
-    border: 1px solid $black-16;
-    width: 60.6vw;
-    min-height: 30.4vh;
-  }
-  
-  .integration-list h3 {
-    margin-bottom: 20px;
-  }
-  
-  table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  thead {
-    background-color: $white;
-  }
-  
-  thead th {
-    padding: 10px;
-    text-align: left;
-    font-size: 14px;
-    font-weight: 400;
-  }
-  
-  tbody tr {
-    border-bottom: 1px solid $black-16;
+  background-color: $white;
+  color: $black;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid $black-16;
+  width: 60.6vw;
+  min-height: 30.4vh;
+  height: 299px;
+
+  // Media query for smaller screens (e.g., mobile devices)
+  @media (max-width: 768px) {
+    width: 90vw;
+    height: auto;  // Adjust height for smaller screens
   }
 
+  // Media query for very small screens (e.g., extra small mobile devices)
+  @media (max-width: 480px) {
+    width: 95vw;
+    padding: 15px;  // Adjust padding for smaller screens
+  }
+}
+
+.integration-list h3 {
+  margin-bottom: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+
+  // Media query for smaller screens (adjust font size)
+  @media (max-width: 768px) {
+    font-size: 12px;
+  }
+}
+
+thead {
+  background-color: $white;
+}
+
+thead th {
+  padding: 10px;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 400;
+
+  // Adjust for smaller screens
+  @media (max-width: 768px) {
+    font-size: 12px;
+  }
+}
+
+tbody tr {
+  border-bottom: 1px solid $black-16;
+}
+
 tbody tr:last-child {
-    border-bottom: none;
+  border-bottom: none;
+}
+
+tbody td {
+  padding: 10px;
+  font-size: 14px;
+
+  // Adjust for smaller screens
+  @media (max-width: 768px) {
+    font-size: 12px;
+    padding: 8px;
   }
-  
-  tbody td {
-    padding: 10px;
-    font-size: 14px;
+}
+
+tbody td .application {
+  display: flex;
+  align-items: center;
+}
+
+tbody td .application img {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  border-radius: 4px;
+  background-color: white;
+}
+
+.rate-bar {
+  background-color: #3b4067;
+  height: 6px;
+  border-radius: 3px;
+  overflow: hidden;
+  margin-right: 10px;
+  display: inline-block;
+  width: 100px;
+  vertical-align: middle;
+
+  // Adjust for smaller screens
+  @media (max-width: 768px) {
+    width: 80px;
   }
-  
-  tbody td .application {
-    display: flex;
-    align-items: center;
-  }
-  
-  tbody td .application img {
-    width: 24px;
-    height: 24px;
-    margin-right: 10px;
-    border-radius: 4px;
-    background-color: white;
-  }
-  
-  .rate-bar {
-    background-color: #3b4067;
-    height: 6px;
-    border-radius: 3px;
-    overflow: hidden;
-    margin-right: 10px;
-    display: inline-block;
-    width: 100px;
-    vertical-align: middle;
-  }
-  
-  .rate-bar-fill {
-    background-color: #6a5ae0;
-    height: 100%;
-  }
-  
-  tbody td span {
-    vertical-align: middle;
-  }
-  
-  tbody td:last-child {
-    text-align: right;
-  }
+}
+
+.rate-bar-fill {
+  background-color: #6a5ae0;
+  height: 100%;
+}
+
+tbody td span {
+  vertical-align: middle;
+}
+
+tbody td:last-child {
+  text-align: right;
+}

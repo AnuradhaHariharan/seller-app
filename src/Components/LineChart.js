@@ -26,7 +26,20 @@ ChartJS.register(
   annotationPlugin // Register the plugin
 );
 
+const getCurrencySymbol = (countryCode) => {
+  const currencyMap = {
+    US: "$",    // United States
+    IN: "₹",    // India
+    CA: "C$",   // Canada
+    DE: "€",    // Germany
+  };
+  return currencyMap[countryCode] || "$"; // Default to "$" if the code is not found
+};
+
 const LineChart = () => {
+  const countryCode = localStorage.getItem("selectedCountry") || "US"; // Default to "US"
+  const currencySymbol = getCurrencySymbol(countryCode);
+
   const data = {
     labels: ["Apr 2023", "May 2023", "Jun 2023", "Jul 2023", "Aug 2023", "Sep 2023", "Oct 2023", "Nov 2023", "Dec 2023", "Jan 2024"],
     datasets: [
@@ -56,80 +69,24 @@ const LineChart = () => {
 
   const options = {
     responsive: true,
-    maintainAspectRatio: false, // Disable aspect ratio for custom width and height
+    maintainAspectRatio: false,
     plugins: {
       legend: {
-        display: true,
+        display: false,
         position: "top",
         labels: {
           color: "#333",
           font: {
-            size: 12,
+            size: 8,
           },
+          usePointStyle: true,
+          padding: 10,
         },
       },
       tooltip: {
         callbacks: {
           label: function (context) {
-            return `${context.dataset.label}: $${context.raw.toLocaleString("en-US")}`;
-          },
-        },
-      },
-      annotation: {
-        annotations: {
-          line1: {
-            type: "line",
-            xMin: 9,
-            xMax: 9,
-            yMin: 10000,
-            yMax: 10000,
-            borderColor: "black",
-            borderWidth: 1,
-            label: {
-              content: "$10k",
-              enabled: true,
-              position: "right",
-              font: {
-                size: 12,
-                weight: "bold",
-              },
-            },
-          },
-          line2: {
-            type: "line",
-            xMin: 9,
-            xMax: 9,
-            yMin: 15000,
-            yMax: 15000,
-            borderColor: "black",
-            borderWidth: 1,
-            label: {
-              content: "$15k",
-              enabled: true,
-              position: "right",
-              font: {
-                size: 12,
-                weight: "bold",
-              },
-            },
-          },
-          line3: {
-            type: "line",
-            xMin: 9,
-            xMax: 9,
-            yMin: 20000,
-            yMax: 20000,
-            borderColor: "black",
-            borderWidth: 1,
-            label: {
-              content: "$20k",
-              enabled: true,
-              position: "right",
-              font: {
-                size: 12,
-                weight: "bold",
-              },
-            },
+            return `${context.dataset.label}: ${currencySymbol}${context.raw.toLocaleString("en-US")}`;
           },
         },
       },
@@ -137,7 +94,10 @@ const LineChart = () => {
     scales: {
       x: {
         grid: {
-          display: false,
+          display: true,
+          color: function (context) {
+            return context.index % 2 === 0 ? "rgba(105, 111, 251, 0.2)" : "rgba(0, 0, 0, 0.1)";
+          },
         },
         ticks: {
           color: "#666",
@@ -148,7 +108,7 @@ const LineChart = () => {
       },
       y: {
         grid: {
-          color: "rgba(0, 0, 0, 0.05)",
+          color: "",
         },
         ticks: {
           stepSize: 5000,
@@ -157,7 +117,7 @@ const LineChart = () => {
             size: 12,
           },
           callback: function (value) {
-            return `$${value}`;
+            return `${currencySymbol}${value}`;
           },
         },
       },
@@ -170,7 +130,6 @@ const LineChart = () => {
       style={{
         minWidth: "60.6vw", // Hardcoded width
         minHeight: "30.4vh", // Hardcoded height
-        //margin: "2rem auto",
         padding: "20px",
         borderRadius: "0.5rem",
         boxShadow: "0 0.25rem 0.625rem rgba(0, 0, 0, 0.1)",
@@ -205,17 +164,21 @@ const LineChart = () => {
           <div style={{ color: "black", marginLeft: "1.5rem" }}>
             <span style={{ fontSize: "0.875rem" }}>Total Revenue</span>
             <br />
-            <span style={{ fontWeight: "700", fontSize: "0.875rem" }}>$50,345.67</span>
+            <span style={{ fontWeight: "700", fontSize: "0.875rem" }}>
+              {currencySymbol}50,345.67
+            </span>
           </div>
           <div style={{ color: "black", marginLeft: "1.5rem" }}>
             <span style={{ fontSize: "0.875rem" }}>Total Target</span>
             <br />
-            <span style={{ fontWeight: "700", fontSize: "0.875rem" }}>$70,321.45</span>
+            <span style={{ fontWeight: "700", fontSize: "0.875rem" }}>
+              {currencySymbol}70,321.45
+            </span>
           </div>
         </div>
       </div>
 
-      <div style={{ width: "100%", height: "calc(100% - 1.5rem)" }}>
+      <div style={{ width: "100%", height: "calc(100% - 2.5rem)" }}>
         <Line data={data} options={options} />
       </div>
     </div>
@@ -223,3 +186,5 @@ const LineChart = () => {
 };
 
 export default LineChart;
+
+
