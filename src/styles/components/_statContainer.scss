@@ -1,14 +1,14 @@
 .stats-container {
   display: flex;
-  flex-wrap: wrap; /* Allow items to wrap to new lines if needed */
+  flex-wrap: wrap;
   background: #f8f9fa;
   margin-top: 64px;
   margin-left: 64px;
-  height: 100vh;
-  background-color: $blue-4; /* Optional background color */
-  justify-content: center; /* Center items horizontally */
-  align-items: center; /* Center items vertically */
-  padding: 20px;
+  // height: 100vh;
+  background-color: $blue-4;
+  // justify-content: center;
+  align-items: center;
+  padding: 5.87vh 2.12vw;
 }
 .stats-container.dark {
   background-color: #626381;
@@ -64,8 +64,13 @@
 }
 .sales-by-region-container {
   background-color: $white;
+  border: 1px solid rgba(0, 0, 0, 0.16);
   padding: 20px;
   border-radius: 8px;
+  width: 29.4vw;
+  min-height: 30.4vh;
+
+  //height: 19rem;
   h3 {
     color: black;
   }

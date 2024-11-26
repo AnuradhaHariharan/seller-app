@@ -33,6 +33,7 @@ const SalesByRegionChart = () => {
 
   const options = {
     responsive: true,
+    maintainAspectRatio: false, // Allow custom dimensions
     plugins: {
       legend: {
         display: false, // Hide the legend
@@ -74,66 +75,21 @@ const SalesByRegionChart = () => {
         },
       },
     },
-    // Custom plugin to render numbers below each label and fill hexagons with color
-    plugins: [
-      {
-        id: "customLabelNumbers",
-        afterDraw: (chart) => {
-          const { ctx, chartArea, scales } = chart;
-          const { left, right, top, bottom } = chartArea;
-          const xAxis = scales.r;
-          const labels = chart.data.labels;
-          const data = chart.data.datasets[0].data;
-
-          // Calculate position for each point label and hexagon background color
-          labels.forEach((label, index) => {
-            const radius = xAxis.getDistanceFromCenterForValue(data[index]);
-            const angle = (index * Math.PI * 2) / labels.length - Math.PI / 2; // Convert to radians
-            const x = chartArea.left + radius * Math.cos(angle); // X position
-            const y = chartArea.top + radius * Math.sin(angle); // Y position
-
-            // Adjust vertical position for the label (add a fixed offset below the point)
-            const labelOffset = 20; // Adjust this for spacing below the label
-            const yOffset = y + labelOffset;
-
-            // Draw the hexagonal background color
-            const hexagonRadius = 20; // Size of the hexagon area (adjust this value)
-            ctx.save();
-            ctx.beginPath();
-            ctx.moveTo(x + hexagonRadius * Math.cos(angle), y + hexagonRadius * Math.sin(angle));
-
-            for (let i = 1; i < 6; i++) {
-              ctx.lineTo(
-                x + hexagonRadius * Math.cos(angle + (i * Math.PI) / 3),
-                y + hexagonRadius * Math.sin(angle + (i * Math.PI) / 3)
-              );
-            }
-            ctx.closePath();
-            ctx.fillStyle = "rgba(138, 102, 226, 0.2)"; // Light purple fill for the hexagon
-            ctx.fill();
-            ctx.restore();
-
-            // Draw the number below the label
-            ctx.save();
-            ctx.font = "bold 12px Arial";
-            ctx.fillStyle = "#333"; // Color for the number
-            ctx.textAlign = "center"; // Center the number
-            ctx.fillText(`$${data[index].toLocaleString("en-US")}`, x, yOffset); // Draw the number below the label
-            ctx.restore();
-          });
-        },
-      },
-    ],
   };
 
   return (
     <div className="sales-by-region-container">
       {/* Heading */}
-      <h3 className="sales-by-region-heading">
-        Sales by Region
-      </h3>
+      <h3 className="sales-by-region-heading">Sales by Region</h3>
       {/* Chart */}
-      <div className="sales-by-region-chart">
+      <div
+        className="sales-by-region-chart"
+        style={{
+          width: "28vw", // Width in rem
+          height: "28.36vh", // Reduced height to 230px
+         
+        }}
+      >
         <Radar data={data} options={options} />
       </div>
     </div>

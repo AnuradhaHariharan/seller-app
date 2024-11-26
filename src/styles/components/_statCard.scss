@@ -4,9 +4,9 @@
     border-radius: 8px;
     padding: 20px;
     text-align: center;
-    margin-left: 25px;
-    height: 157px;
-    width: 298px;
+    min-height: 16vh;
+    width: 21.7vw;
+    border: 1px solid rgba(0, 0, 0, 0.16);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   
     .stat-card-heading {

@@ -56,7 +56,7 @@ const LineChart = () => {
 
   const options = {
     responsive: true,
-    maintainAspectRatio: false,
+    maintainAspectRatio: false, // Disable aspect ratio for custom width and height
     plugins: {
       legend: {
         display: true,
@@ -137,7 +137,7 @@ const LineChart = () => {
     scales: {
       x: {
         grid: {
-          display: false, // Hide default x-axis grid
+          display: false,
         },
         ticks: {
           color: "#666",
@@ -148,7 +148,7 @@ const LineChart = () => {
       },
       y: {
         grid: {
-          color: "rgba(0, 0, 0, 0.05)", // Light grid lines
+          color: "rgba(0, 0, 0, 0.05)",
         },
         ticks: {
           stepSize: 5000,
@@ -166,30 +166,30 @@ const LineChart = () => {
 
   return (
     <div
-      className="chart-container"  // Added class to control the background color
+      className="chart-container"
       style={{
-        width: "800px",
-        margin: "20px auto",
+        minWidth: "60.6vw", // Hardcoded width
+        minHeight: "30.4vh", // Hardcoded height
+        //margin: "2rem auto",
         padding: "20px",
-        borderRadius: "8px",
-        boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",
+        borderRadius: "0.5rem",
+        boxShadow: "0 0.25rem 0.625rem rgba(0, 0, 0, 0.1)",
       }}
     >
       <div
         style={{
-          display: "flex", // Use flexbox for the main layout
-          justifyContent: "space-between", // Distribute space between left and right elements
-          alignItems: "center", // Align items vertically in the center
-          marginBottom: "10px",
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          marginBottom: "1rem",
         }}
       >
         <span
           className="heading"
           style={{
             color: "black",
-            fontSize: "18px",
+            fontSize: "1.125rem",
             fontWeight: "700",
-            marginBottom: "",
           }}
         >
           Sales Overview
@@ -197,25 +197,25 @@ const LineChart = () => {
 
         <div
           style={{
-            display: "flex", // Use flexbox for the inner content to be aligned horizontally
-            justifyContent: "flex-end", // Align items to the right
+            display: "flex",
+            justifyContent: "flex-end",
             alignItems: "center",
           }}
         >
-          <div style={{ color: "black", marginLeft: "30px" }}>
-            <span style={{ fontSize: "14px" }}>Total Revenue</span>
+          <div style={{ color: "black", marginLeft: "1.5rem" }}>
+            <span style={{ fontSize: "0.875rem" }}>Total Revenue</span>
             <br />
-            <span style={{ fontWeight: "400", fontSize: "14px", fontWeight: "700" }}>$50,345.67</span>
+            <span style={{ fontWeight: "700", fontSize: "0.875rem" }}>$50,345.67</span>
           </div>
-          <div style={{ color: "black", marginLeft: "30px" }}>
-            <span style={{ fontSize: "14px" }}>Total Target</span>
+          <div style={{ color: "black", marginLeft: "1.5rem" }}>
+            <span style={{ fontSize: "0.875rem" }}>Total Target</span>
             <br />
-            <span style={{ fontWeight: "400", fontSize: "14px", fontWeight: "700" }}>$70,321.45</span>
+            <span style={{ fontWeight: "700", fontSize: "0.875rem" }}>$70,321.45</span>
           </div>
         </div>
       </div>
 
-      <div style={{ height: "300px" }}>
+      <div style={{ width: "100%", height: "calc(100% - 1.5rem)" }}>
         <Line data={data} options={options} />
       </div>
     </div>

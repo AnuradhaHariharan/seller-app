@@ -1,9 +1,11 @@
 .chart-container {
     flex: 60% 0;
-    height: 400px;
+    // height: 19rem;
+    // width: 57rem;
     padding: 20px;
     border-radius: 8px;
-    margin: -50px;
+    border: 1px solid rgba(0, 0, 0, 0.16);
+    // margin: -50px;
     background-color: $white;
     /* Optional margin between items */
 }
