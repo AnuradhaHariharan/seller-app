@@ -97,7 +97,7 @@ const HalfDonutChart = () => {
               justifyContent: "center",
             }}
           >
-            <img src="/assets/customers-icon.svg" alt="Icon" />
+            <img src={`${process.env.PUBLIC_URL}/assets/customers-icon.svg`}/>
           </div>
           <h1
             style={{

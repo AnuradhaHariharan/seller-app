@@ -74,7 +74,10 @@ const IntegrationList = () => {
               </td>
               <td>
                 <div className="application">
-                  <img src={integration.logo} alt={integration.name} />
+                  <img
+                    src={`${process.env.PUBLIC_URL}${integration.logo}`}
+                    alt={integration.name}
+                  />
                   <span>{integration.name}</span>
                 </div>
               </td>
@@ -101,4 +104,5 @@ const IntegrationList = () => {
 };
 
 export default IntegrationList;
+
 

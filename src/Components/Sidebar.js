@@ -5,59 +5,59 @@ const Sidebar = ({ toggleTheme, theme }) => {
     <div className={`sidebar ${theme ? 'dark' : 'light'}`}>
       {/* Toggle button to switch themes */}
       <span className="icon-container">
-        <img src="/assets/sellerApp-icon-logo.svg" alt="Dashboard icon" />
-        <img src="/assets/octicon_arrow-up-16.svg" alt="Arrow icon" />
+        <img src={`${process.env.PUBLIC_URL}/assets/sellerApp-icon-logo.svg`} alt="Dashboard icon" />
+        <img src={`${process.env.PUBLIC_URL}/assets/octicon_arrow-up-16.svg`} alt="Arrow icon" />
       </span>
       <span className="icon-container-2">
-        <img src="/assets/sellerApp.svg" alt="Dashboard icon" />
-        <img src="/assets/arrow-up.png" alt="Arrow icon" />
+        <img src={`${process.env.PUBLIC_URL}/assets/sellerApp.svg`} alt="Dashboard icon" />
+        <img src={`${process.env.PUBLIC_URL}/assets/arrow-up.png`} alt="Arrow icon" />
       </span>
       <ul>
         <li>
-          <img src="/assets/dashboard-icon.svg" alt="Dashboard icon" />
+          <img src={`${process.env.PUBLIC_URL}/assets/dashboard-icon.svg`} alt="Dashboard icon" />
           <span>Dashboard</span>
         </li>
         <li>
-          <img src="/assets/payment-icon.svg" alt="Payment icon" />
+          <img src={`${process.env.PUBLIC_URL}/assets/payment-icon.svg`} alt="Payment icon" />
           <span>Payment</span>
         </li>
         <li>
-          <img src="/assets/majesticons_users-line.svg" alt="Customers icon" />
+          <img src={`${process.env.PUBLIC_URL}/assets/majesticons_users-line.svg`} alt="Customers icon" />
           <span>Customers</span>
         </li>
         <li>
-          <img src="/assets/messages-icon.svg" alt="Messages icon" />
+          <img src={`${process.env.PUBLIC_URL}/assets/messages-icon.svg`} alt="Messages icon" />
           <span>Messages</span>
         </li>
         <hr />
         <li>
-          <img src="/assets/product-icon.svg" alt="Messages icon" />
+          <img src={`${process.env.PUBLIC_URL}/assets/product-icon.svg`} alt="Messages icon" />
           <span>Product</span>
         </li>
         <li>
-          <img src="/assets/invoice-icon.svg" alt="Messages icon" />
+          <img src={`${process.env.PUBLIC_URL}/assets/invoice-icon.svg`} alt="Messages icon" />
           <span>Invoice</span>
         </li>
         <li>
-          <img src="/assets/analytics-icon.svg" alt="Messages icon" />
+          <img src={`${process.env.PUBLIC_URL}/assets/analytics-icon.svg`} alt="Messages icon" />
           <span>Analytics</span>
         </li>
         <hr />
         <li>
-          <img src="/assets/setting-icon.svg" alt="Messages icon" />
+          <img src={`${process.env.PUBLIC_URL}/assets/setting-icon.svg`} alt="Messages icon" />
           <span>Settings</span>
         </li>
         <li>
-          <img src="/assets/security-icon.svg" alt="Messages icon" />
+          <img src={`${process.env.PUBLIC_URL}/assets/security-icon.svg`} alt="Messages icon" />
           <span>Security</span>
         </li>
         <li>
-          <img src="/assets/help-icon.svg" alt="Messages icon" />
+          <img src={`${process.env.PUBLIC_URL}/assets/help-icon.svg`} alt="Messages icon" />
           <span>Help</span>
         </li>
         <hr />
         <li>
-          <img src="/assets/logout-icon.svg" alt="Messages icon" />
+          <img src={`${process.env.PUBLIC_URL}/assets/logout-icon.svg`} alt="Messages icon" />
           <span>Logout</span>
         </li>
       </ul>
@@ -70,9 +70,9 @@ const Sidebar = ({ toggleTheme, theme }) => {
           checked={theme}  // Ensure the checkbox reflects the current theme state
         />
         <label htmlFor="theme-switch" className="toggle-label"></label>
-        <img src="/assets/sun.png" className="sun" alt="Sun icon" />
+        <img src={`${process.env.PUBLIC_URL}/assets/sun.png`} className="sun" alt="Sun icon" />
         <p className="text-body night-label">Dark</p>
-        <img src="/assets/moon.png" className="moon" alt="Sun icon" />
+        <img src={`${process.env.PUBLIC_URL}/assets/moon.png`} className="moon" alt="Sun icon" />
       </div>
     </div>
   );

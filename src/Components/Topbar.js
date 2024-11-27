@@ -45,13 +45,13 @@ const Topbar = ({ theme, toggleTheme }) => {
                 <div className="country-dropdown" onClick={toggleDropdown}>
                     <div className="selected-country">
                         <img
-                            src={selectedCountry.flag}
+                            src={`${process.env.PUBLIC_URL}${selectedCountry.flag}`}
                             alt={`${selectedCountry.name} Flag`}
                             className="flag-image"
                         />
                         <span>{selectedCountry.name}</span>
                         <img
-                            src="/assets/down-arrow.png"
+                            src={`${process.env.PUBLIC_URL}/assets/down-arrow.png`}
                             alt="Down Arrow"
                             className="down-arrow"
                         />
@@ -76,7 +76,7 @@ const Topbar = ({ theme, toggleTheme }) => {
 
                 {/* Login Image */}
                 <img
-                    src="/assets/login-icon.png"
+                    src={`${process.env.PUBLIC_URL}/assets/login-icon.png`}
                     alt="Login Icon"
                     className="login-image"
                 />
@@ -86,4 +86,5 @@ const Topbar = ({ theme, toggleTheme }) => {
 };
 
 export default Topbar;
+
 
