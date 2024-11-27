@@ -1,46 +1,78 @@
-# Getting Started with Create React App and Redux
+# Seller App Assignment
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+## Description
 
-## Available Scripts
+This project is a **Seller App** that leverages **React** for the front-end and **Chart.js** for graphical representations. The app features a dynamic interface where users can toggle between **dark** and **light modes**, change the **country**, and see the values in the **stats container** update accordingly. It also utilizes **local storage** to persist user settings, such as selected country and theme preference, even when the page is refreshed.
 
-In the project directory, you can run:
+### Features
 
-### `npm start`
+- **Dark & Light Mode Toggle**: Allows users to switch between light and dark themes for a customized user experience.
+- **Country Selector**: Users can select a country, and the statistics in the stats container will dynamically update based on the chosen country.
+- **Chart.js Integration**: Displays statistics using interactive graphs powered by Chart.js.
+- **Persistence**: Uses local storage to save user preferences (country selection and theme) across sessions, even after a page refresh.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Technologies Used
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **React**: The JavaScript library used to build the front-end of the app.
+- **Chart.js**: A powerful library used for rendering the graphs and charts.
+- **Local Storage**: For saving user settings (theme and country) to ensure persistence across page reloads.
+- **CSS/SCSS**: For styling the app with custom styles for both light and dark themes.
 
-### `npm test`
+## Deployed Link
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+You can view the deployed app here:
 
-### `npm run build`
+[Deployed Seller App](https://your-deployed-link.com)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Installation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+To run the project locally, follow the steps below:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. **Clone the repository** to your local machine:
 
-### `npm run eject`
+    ```bash
+    git clone https://anuradhahariharan.github.io/seller-app/
+    ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+2. Navigate into the project directory:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    ```bash
+    cd seller-app-dashboard
+    ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+3. Install the dependencies using **npm**:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+    ```bash
+    npm install
+    ```
 
-## Learn More
+4. Start the development server:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    ```bash
+    npm start
+    ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+   This will run the app on [http://localhost:3000](http://localhost:3000).
+
+## Usage
+
+1. **Toggle between Dark and Light Mode**: Use the toggle button available in the header to switch themes.
+2. **Change Country**: Select the desired country from the dropdown, and the stats container will update with the new values corresponding to that country.
+3. **Persist Settings**: Your selected country and theme mode will be saved and persisted even after a page refresh due to the use of local storage.
+
+## How it works
+
+- The **Country Selector** component allows users to choose a country. When a country is selected, the app fetches the corresponding stats (e.g., Total income,profit etc) and updates the **StatsContainer** with the new data.
+- The **Theme Toggle** allows users to switch between **dark** and **light** mode. This preference is saved to **localStorage** and is applied every time the page is loaded.
+- **Chart.js** is used to generate visual representations of the data in a dynamic graph. The graph updates based on the selected country, providing an interactive data visualization.
+- **Persistence**: The app stores the selected country and theme preferences in the browser's **localStorage**, ensuring that user settings are retained across page reloads.
+
+## Screenshots
+<img width="767" alt="Screenshot 2024-11-27 at 2 01 33 PM" src="https://github.com/user-attachments/assets/acd4e371-7197-4273-a6db-9ecfdbc379b3">
+<img width="763" alt="Screenshot 2024-11-27 at 2 01 03 PM" src="https://github.com/user-attachments/assets/d9b7e932-906f-49f7-a603-fb7cc08574e6">
+<img width="758" alt="Screenshot 2024-11-27 at 2 03 10 PM" src="https://github.com/user-attachments/assets/4bb4308b-cc9d-410c-b0a8-fa62dc31dfb9">
+
+
+
+
+
