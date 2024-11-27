@@ -65,7 +65,7 @@
       cursor: pointer;
       transition: 0.4s;
       position: relative;
-      z-index: 2;
+      z-index: 1000;
     }
 
     input[type="checkbox"]:checked ~ .sun {
@@ -176,6 +176,10 @@
     .sun {
       left: 45px;
     }
+    .moon{
+      left: 65px;
+    }
+    
     .icon-container-2 {
       display: flex; /* Show icon-container-2 on hover */
       align-items: center;
@@ -237,4 +241,9 @@
     color: white;
   }
 
+}
+.moon {
+  position: fixed;
+  left: 35px;
+  z-index: 1000;
 }

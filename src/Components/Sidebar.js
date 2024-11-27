@@ -72,6 +72,7 @@ const Sidebar = ({ toggleTheme, theme }) => {
         <label htmlFor="theme-switch" className="toggle-label"></label>
         <img src="/assets/sun.png" className="sun" alt="Sun icon" />
         <p className="text-body night-label">Dark</p>
+        <img src="/assets/moon.png" className="moon" alt="Sun icon" />
       </div>
     </div>
   );
