@@ -10,7 +10,9 @@ const StatCard = ({ heading, value, currency, description, badge }) => {
       </p>
       <div className="stat-card-footer">
         <span className="stat-card-badge">
+        <img src="/assets/octicon_arrow-up-16.png"/>
           {badge !== null && badge !== undefined ? `${badge}%` : "0%"}
+         
         </span>
         <p className="stat-card-description">{description}</p>
       </div>

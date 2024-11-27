@@ -227,3 +227,14 @@
   }
 }
 }
+.sidebar.dark {
+  background-color: #1F214A;
+
+  img {
+    filter: brightness(0) invert(1); // Makes images appear white
+  }
+  span, .day-label,.night-label {
+    color: white;
+  }
+
+}

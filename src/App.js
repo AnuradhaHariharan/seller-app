@@ -6,41 +6,28 @@ import Topbar from "./Components/Topbar";
 import StatsContainer from "./Components/StatsContainer";
 
 function App() {
-  const [isDarkTheme, setIsDarkTheme] = useState(false);
-  const [selectedCountry, setSelectedCountry] = useState("US");
+  const [isDarkTheme, setIsDarkTheme] = useState(() => {
+    // Initialize theme based on localStorage or default to false (light theme)
+    return localStorage.getItem("theme") === "dark";
+  });
+  const [selectedCountry, setSelectedCountry] = useState(() => {
+    // Initialize country based on localStorage or default to "US"
+    return localStorage.getItem("selectedCountry") || "US";
+  });
 
-  // Load theme and country from localStorage
-  useEffect(() => {
-    const savedTheme = localStorage.getItem("theme");
-    const savedCountry = localStorage.getItem("selectedCountry");
-
-    // Set the theme based on localStorage, default to light if not set
-    if (savedTheme) {
-      setIsDarkTheme(savedTheme === "dark");
-    } else {
-      // If no theme is set in localStorage, default to light
-      setIsDarkTheme(false);
-    }
-
-    // Set the selected country from localStorage
-    if (savedCountry) {
-      setSelectedCountry(savedCountry);
-    }
-  }, []); // Empty dependency array to run once on component mount
-
-  // Save theme to localStorage when it changes
+  // Save theme to localStorage whenever it changes
   useEffect(() => {
     localStorage.setItem("theme", isDarkTheme ? "dark" : "light");
-  }, [isDarkTheme]); // Only run when the theme changes
+  }, [isDarkTheme]);
 
-  // Handle country change (optional if you want to force reload on country change)
+  // Handle country change from localStorage
   useEffect(() => {
     const interval = setInterval(() => {
       const savedCountry = localStorage.getItem("selectedCountry");
       if (savedCountry && savedCountry !== selectedCountry) {
         setSelectedCountry(savedCountry);
       }
-    }, 1000); // Check for country change every second
+    }, 1000); // Check every second for changes
 
     return () => clearInterval(interval); // Cleanup interval on component unmount
   }, [selectedCountry]);
@@ -50,7 +37,6 @@ function App() {
       <Sidebar toggleTheme={() => setIsDarkTheme(!isDarkTheme)} theme={isDarkTheme} />
       
       <div className="content-panel">
-        {/* Pass the selectedCountry to Topbar */}
         <Topbar theme={isDarkTheme} selectedCountry={selectedCountry} />
         <StatsContainer theme={isDarkTheme} />
       </div>
@@ -59,5 +45,6 @@ function App() {
 }
 
 export default App;
+
 
 
