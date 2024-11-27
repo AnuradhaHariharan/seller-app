@@ -5,7 +5,7 @@ const Sidebar = ({ toggleTheme, theme }) => {
     <div className={`sidebar ${theme ? 'dark' : 'light'}`}>
       {/* Toggle button to switch themes */}
       <span className="icon-container">
-        <img src={`${process.env.PUBLIC_URL}/assets/sellerApp-icon-logo.svg`} alt="Dashboard icon" />
+        <img src={`${process.env.PUBLIC_URL}/assets/sellerApp-Icon-logo.svg`} alt="Dashboard icon" />
         <img src={`${process.env.PUBLIC_URL}/assets/octicon_arrow-up-16.svg`} alt="Arrow icon" />
       </span>
       <span className="icon-container-2">
