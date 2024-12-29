@@ -22,7 +22,7 @@ This project is a **Seller App** that leverages **React** for the front-end and 
 
 You can view the deployed app here:
 
-[Deployed Seller App](https://your-deployed-link.com)
+[Deployed Seller App](https://anuradhahariharan.github.io/seller-app/)
 
 ## Installation
 
