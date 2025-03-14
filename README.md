@@ -1,4 +1,4 @@
-# Seller App Assignment
+# Seller App
 
 ## Description
 
